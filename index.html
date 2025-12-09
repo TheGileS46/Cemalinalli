@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarde Navideña - Colegio Cemalinalli</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="icon.png">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Controles de música -->
+    <div class="music-control" id="musicControl" title="Haz clic para reproducir/pausar">
+        <i class="fas fa-play"></i>
+    </div>
+    
+    <!-- Luces navideñas -->
+    <div class="lights-container" id="lightsContainer"></div>
+    
+    <div class="container">
+        <header class="header">
+            <h1 class="title">¡Tarde Navideña!</h1>
+            <h2 class="subtitle">Colegio Cemalinalli</h2>
+            <p class="subtitle">12 de Diciembre | 5:00 PM</p>
+            
+            <!-- Countdown -->
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-value" id="days">00</span>
+                    <span class="countdown-label">Días</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="hours">00</span>
+                    <span class="countdown-label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="minutes">00</span>
+                    <span class="countdown-label">Minutos</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-value" id="seconds">00</span>
+                    <span class="countdown-label">Segundos</span>
+                </div>
+            </div>
+        </header>
+        
+        <main class="content">
+            <section class="event-details">
+                <h2 class="details-title">Detalles del Evento</h2>
+                <ul class="details-list">
+                    <li>
+                        <i class="fas fa-calendar-alt"></i>
+                        <span><span class="highlight">Fecha:</span> 12 de Diciembre</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-clock"></i>
+                        <span><span class="highlight">Hora:</span> 5:00 PM</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span><span class="highlight">Lugar:</span> Colegio Cemalinalli</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-music"></i>
+                        <span><span class="highlight">Actividades:</span> Villancicos, Bailables e Interpretación</span>
+                    </li>
+                    <li>
+                        <i class="fas fa-users"></i>
+                        <span><span class="highlight">Participantes:</span> Alumnos de todos los grados</span>
+                    </li>
+                </ul>
+            </section>
+            
+            <section class="program-section">
+                <h2 class="program-title">Orden de Presentación</h2>
+                <p class="program-description">Los alumnos se presentarán en el siguiente orden:</p>
+                
+                <ol class="order-list" id="orderList">
+                    <li class="grupo-azul">2º de Primaria Azul</li>
+                    <li class="preescolar">Todo preescolar</li>
+                    <li class="secundaria">2º de Secundaria</li>
+                    <li class="primaria">1º de Primaria</li>
+                    <li class="grupo-naranja">2º dePrimaria Naranja</li>
+                    <li class="primaria">3º de Primaria</li>
+                    <li class="secundaria">1º de Secundaria</li>
+                    <li class="primaria">4º de Primaria</li>
+                    <li class="primaria">5º de Primaria</li>
+                    <li class="secundaria">3º de Secundaria</li>
+                    <li class="primaria">6º de Primaria</li>
+                </ol>
+                
+               
+               
+            </section>
+        </main>
+        
+        <footer class="footer">
+            <div class="developer-info">
+                <p>© Este sitio fue desarrollado por <strong>WCD (Edgar Ramos y Omar Amaral)</strong> | 
+                <a href="https://thegiles46.github.io/WCD/" target="_blank">Visita nuestra página de desarrollo</a></p>
+            </div>
+        </footer>
+    </div>
+    
+    <!-- Audio para música navideña - SOLUCIÓN CONFIABLE -->
+    <audio id="christmasMusic" preload="auto">
+        <source src="song.mp3" type="audio/mpeg">
+        <source src="https://assets.mixkit.co/music/preview/mixkit-jingle-bells-311.mp3" type="audio/mpeg" id="fallbackMusic">
+        Tu navegador no soporta el elemento de audio.
+    </audio>
+    
+    <script src="script.js"></script>
+</body>
+</html>

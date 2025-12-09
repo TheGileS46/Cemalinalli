@@ -1,0 +1,418 @@
+
+        :root {
+            --navidad-rojo: #C62828;
+            --navidad-verde: #2E7D32;
+            --navidad-oro: #FFD700;
+            --navidad-blanco: #FFF9F2;
+            --navidad-azul: #1565C0;
+            --navidad-naranja: #EF6C00;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0c3b2e;
+            background-image: radial-gradient(#1b5e20 1px, transparent 1px);
+            background-size: 30px 30px;
+            color: var(--navidad-blanco);
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            padding: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .title {
+            font-family: 'Mountains of Christmas', cursive;
+            font-size: 3.5rem;
+            color: var(--navidad-oro);
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+            animation: titileAnimation 3s infinite alternate;
+        }
+        
+        @keyframes titileAnimation {
+            0% { text-shadow: 0 0 10px rgba(255, 215, 0, 0.5); }
+            100% { text-shadow: 0 0 20px rgba(255, 215, 0, 0.8), 0 0 30px rgba(255, 215, 0, 0.6); }
+        }
+        
+        .subtitle {
+            font-size: 1.8rem;
+            color: var(--navidad-blanco);
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .subtitle {
+                font-size: 1.4rem;
+            }
+        }
+        
+        .event-details {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 3px solid var(--navidad-oro);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .event-details::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, var(--navidad-rojo), var(--navidad-verde), var(--navidad-oro), var(--navidad-azul));
+            z-index: -1;
+            filter: blur(20px);
+            opacity: 0.3;
+        }
+        
+        .details-title {
+            font-family: 'Mountains of Christmas', cursive;
+            font-size: 2.2rem;
+            color: var(--navidad-oro);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .details-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .details-list li {
+            padding: 15px;
+            margin-bottom: 15px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        
+        .details-list li:hover {
+            transform: translateX(10px);
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .details-list i {
+            color: var(--navidad-oro);
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .program-section {
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border: 3px solid var(--navidad-rojo);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .program-section::before {
+            content: "";
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(45deg, var(--navidad-verde), var(--navidad-oro), var(--navidad-rojo), var(--navidad-naranja));
+            z-index: -1;
+            filter: blur(20px);
+            opacity: 0.3;
+        }
+        
+        .program-title {
+            font-family: 'Mountains of Christmas', cursive;
+            font-size: 2.2rem;
+            color: var(--navidad-oro);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .program-description {
+            font-size: 1.2rem;
+            text-align: center;
+            margin-bottom: 30px;
+            color: #ddd;
+        }
+        
+        .order-list {
+            counter-reset: order-counter;
+            list-style: none;
+        }
+        
+        .order-list li {
+            padding: 15px;
+            margin-bottom: 12px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .order-list li::before {
+            counter-increment: order-counter;
+            content: counter(order-counter) ".-";
+            font-weight: bold;
+            color: var(--navidad-oro);
+            margin-right: 15px;
+            font-size: 1.5rem;
+            min-width: 40px;
+            text-align: center;
+        }
+        
+        .order-list li:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .highlight {
+            color: var(--navidad-oro);
+            font-weight: 700;
+        }
+        
+        .grupo-azul {
+            border-left: 5px solid var(--navidad-azul);
+        }
+        
+        .grupo-naranja {
+            border-left: 5px solid var(--navidad-naranja);
+        }
+        
+        .preescolar {
+            border-left: 5px solid var(--navidad-rojo);
+        }
+        
+        .primaria {
+            border-left: 5px solid var(--navidad-verde);
+        }
+        
+        .secundaria {
+            border-left: 5px solid var(--navidad-oro);
+        }
+        
+        .image-section {
+            background-color: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 30px;
+            text-align: center;
+            border: 2px solid var(--navidad-oro);
+        }
+        
+        .image-section p {
+            margin-bottom: 15px;
+            color: #ccc;
+        }
+        
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .image-grid img {
+            width: 100%;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 8px;
+            border: 2px solid var(--navidad-oro);
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+            border-top: 2px solid rgba(255, 215, 0, 0.3);
+        }
+        
+        .developer-info {
+            font-size: 1rem;
+            color: #aaa;
+            margin-top: 20px;
+        }
+        
+        .developer-info a {
+            color: var(--navidad-oro);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .developer-info a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        .snowflake {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.8;
+            z-index: -1;
+        }
+        
+        .lights-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 30px;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .christmas-light {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            animation: lightBlink 2s infinite alternate;
+        }
+        
+        @keyframes lightBlink {
+            0% { opacity: 0.3; }
+            100% { opacity: 1; }
+        }
+        
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .countdown-item {
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 10px;
+            padding: 20px;
+            min-width: 100px;
+            text-align: center;
+            border: 2px solid var(--navidad-oro);
+        }
+        
+        .countdown-value {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--navidad-oro);
+            display: block;
+        }
+        
+        .countdown-label {
+            font-size: 1rem;
+            color: #ddd;
+        }
+        
+        .music-control {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--navidad-rojo);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            z-index: 100;
+            transition: all 0.3s;
+        }
+        
+        .music-control:hover {
+            transform: scale(1.1);
+            background-color: #a11f1f;
+        }
+        
+        .music-control i {
+            font-size: 1.8rem;
+        }
+        
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            pointer-events: none;
+            z-index: 1000;
+        }
+        
+        .music-note {
+            position: absolute;
+            color: var(--navidad-oro);
+            font-size: 1.5rem;
+            animation: floatNote 3s linear infinite;
+            opacity: 0;
+        }
+        
+        @keyframes floatNote {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        .event-image {
+            width: 100%;
+            border-radius: 15px;
+            margin-top: 20px;
+            border: 3px solid var(--navidad-oro);
+        }
